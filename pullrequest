@@ -1,0 +1,15 @@
+const express = require('express');
+const bodyParser = require('body-parser');
+
+const app = express();
+const PORT = 3000;
+
+app.use(bodyParser.json());
+
+app.post('/pull-request', (req, res) => {
+    res.status(200).json({ message: 'Pull request successfully created!' });
+});
+
+app.listen(PORT, () => {
+    console.log(`Server's running on ${PORT}`);
+});
